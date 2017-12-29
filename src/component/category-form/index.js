@@ -12,6 +12,10 @@ class CategoryForm extends React.Component{
     this.state = this.props.category || emptyState;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+
+    this.props.onComplete({name:'To Do'});
+    this.props.onComplete({name:'In Progress'});
+    
   }
 
   handleChange(e){
