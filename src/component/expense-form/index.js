@@ -40,9 +40,12 @@ class ExpenseForm extends React.Component{
     e.preventDefault();
     this.props.onComplete(this.state);
     this.setState(emptyState);
+
+    console.log('In expense form, this.props is ', this.props);
   }
 
   render(){
+
     return(
       <div className='category-form'>
         <form 
