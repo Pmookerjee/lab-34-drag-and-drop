@@ -5,6 +5,7 @@ import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
 import ExpenseForm from '../expense-form';
 import ExpenseItem from '../expense-item';
+
 import * as category from '../../action/category.js';
 import * as expense from '../../action/expense.js';
 
@@ -23,11 +24,15 @@ class Dashboard extends React.Component{
       <div className='dashboard'>
         <h1> budget manager </h1>
         <CategoryForm id='main-form' onComplete={this.props.categoryCreate}/>
+
         <div className='category-wrapper'>
           {this.props.categories.map((category,i) =>
+
             <div key={category.id}> 
-              <CategoryItem 
+             
+              <CategoryItem                      
                 category={category} 
+                categoryID={category.id}
                 categoryRemove={this.props.categoryRemove}
                 categoryUpdate={this.props.categoryUpdate}
               />
@@ -38,8 +43,9 @@ class Dashboard extends React.Component{
                 expenseInsert={this.props.expenseInsert}
                 expenseDelete={this.props.expenseDelete}
               />
-            </div>
+            </div> 
           )}
+
         </div>
       </div>
     );

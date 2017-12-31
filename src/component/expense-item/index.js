@@ -1,16 +1,26 @@
 import './expense-item.scss';
 import React from 'react';
 import Draggable from '../Draggable';
+import Droppable from '../Droppable';
 
 class ExpenseItem extends React.Component{
   constructor(props){
     super(props);
+
+    this.handleMoveExpense=this.handleMoveExpense.bind(this);    
+  }
+
+  handleMoveExpense(expense){
+    console.log('In the handleMoveExpense, this.props is ', this.props)
+    this.props.expenseDelete(expense);
+    expense.categoryID = this.props.categoryID;
+    this.props.expenseInsert(expense);
   }
 
   render(){
 
     return(
-      <div className='expense-item'>
+      <Droppable parentClass='expense-item' onDrop={this.handleMoveExpense}>         
         {this.props.expenses[this.props.categoryID].map((expense,i) => 
           <Draggable expense={expense}>
             <div key={expense.id}>
@@ -19,7 +29,7 @@ class ExpenseItem extends React.Component{
             </div>
           </Draggable>
         )}
-      </div>
+      </Droppable>
     );
   }
 };

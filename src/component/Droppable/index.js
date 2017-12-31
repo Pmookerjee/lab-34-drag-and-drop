@@ -13,7 +13,7 @@ class Droppable extends React.Component{
     e.preventDefault();
     let expenseData = e.dataTransfer.getData("application/json");
     let expense = JSON.parse(expenseData);
-    this.props.handleDrop(expense);
+    this.props.onDrop(expense);
     console.log('DROP ', expense);
   }
 
@@ -23,11 +23,12 @@ class Droppable extends React.Component{
   }
 
   render(){
-    
+
     return(
-      <div 
-        handleDrop={this.handleDrop}
-        handleDragOver={this.handleDragOver}>
+
+      <div className={this.props.parentClass}
+        onDrop={this.handleDrop}
+        onDragOver={this.handleDragOver}>
         {this.props.children}
       </div>
     )

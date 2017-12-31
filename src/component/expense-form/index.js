@@ -1,6 +1,5 @@
 import ExpenseItem from '../expense-item';
 import React from 'react';
-import Droppable from '../Droppable';
 
 let emptyState = {
   name: '',
@@ -18,7 +17,6 @@ class ExpenseForm extends React.Component{
     }
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleMoveExpense = this.handleMoveExpense.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.props.onComplete({name:'Expense One', cost: 10, categoryID: this.props.categoryID});
@@ -30,18 +28,10 @@ class ExpenseForm extends React.Component{
     this.setState({[name]:value});
   }
 
-  handleMoveExpense(expense){
-    this.props.expenseDelete(expense);
-    expense.categoryID = this.props.categoryID;
-    this.props.expenseInsert(expense);
-  }
-
   handleSubmit(e){
     e.preventDefault();
     this.props.onComplete(this.state);
     this.setState(emptyState);
-
-    console.log('In expense form, this.props is ', this.props);
   }
 
   render(){
@@ -68,14 +58,11 @@ class ExpenseForm extends React.Component{
           <button type='submit'> create expense </button>
         </form>
 
-        <Droppable handleDrop={this.handleMoveExpense}>
           <ExpenseItem 
             expenseDelete={this.props.expenseDelete}
+            expenseInsert={this.props.expenseInsert}            
             expenses={this.props.expenses} 
             categoryID={this.state.categoryID}/> 
-        </Droppable>
-
-
       </div>
     )
   }
