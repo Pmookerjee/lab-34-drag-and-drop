@@ -19,8 +19,8 @@ class ExpenseForm extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    this.props.onComplete({name:'Expense One', cost: 10, categoryID: this.props.categoryID});
-    this.props.onComplete({name:'Expense Two', cost: 20, categoryID: this.props.categoryID});
+    // this.props.onComplete({name:'Expense One', cost: 10, categoryID: this.props.categoryID});
+    // this.props.onComplete({name:'Expense Two', cost: 20, categoryID: this.props.categoryID});
   }
 
   handleChange(e){
@@ -44,16 +44,20 @@ class ExpenseForm extends React.Component{
         >
           <input
             name='name'
+            id="expense-name"
             placeholder='expense item'
             type='text'
             value={this.state.name}
             onChange={this.handleChange}
+            required
           />
           <input
             name='cost'
+            id="expense-amt"
             type='number'
             value={this.state.cost}
             onChange={this.handleChange}
+            required            
           />
           <button type='submit'> create expense </button>
         </form>

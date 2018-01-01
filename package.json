@@ -15,6 +15,15 @@
     "watch-work": "webpack-dev-server --inline --hot",
     "build": "webpack"
   },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/src/__test__/shim.js",
+      "<rootDir>/src/__test__/setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(scss)$": "<rootDir>/node_modules/jest-css-modules"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -41,5 +50,15 @@
     "uuid": "^3.1.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.7"
+  },
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.3.0",
+    "jest": "^21.2.1",
+    "jest-css-modules": "^1.1.0",
+    "react-test-renderer": "^16.2.0",
+    "sinon": "^4.1.3"
   }
 }

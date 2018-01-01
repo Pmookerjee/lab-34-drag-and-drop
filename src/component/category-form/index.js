@@ -13,8 +13,8 @@ class CategoryForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
-    this.props.onComplete({name:'To Do'});
-    this.props.onComplete({name:'In Progress'});
+    // this.props.onComplete({name:'To Do'});
+    // this.props.onComplete({name:'In Progress'});
     
   }
 
@@ -50,6 +50,7 @@ class CategoryForm extends React.Component{
             placeholder='budget category'
             value={this.state.name}
             onChange={this.handleChange}
+            required
           />
           <input
             className='amount-input'
@@ -58,6 +59,7 @@ class CategoryForm extends React.Component{
             placeholder='budgeted amount'
             value={this.state.budget}
             onChange={this.handleChange}
+            required            
           />
   
           <button type='submit'> {button} </button>
