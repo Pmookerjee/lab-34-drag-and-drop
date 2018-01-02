@@ -8,27 +8,29 @@ To test, install Dev dependencies and use `npm test`
 
 ## Component Tree
 
-```App
+  
+  App
 
-  Provider
+    Provider
 
-    BrowserRouter
+      BrowserRouter
 
-      Route/Dashboard
+        Route/Dashboard
 
-        Category Form
+          Category Form
 
-        [Category Item]
+          [Category Item]
 
-           Category Form
+            Category Form
 
-           Expense Form
+            Expense Form
 
-           [Expense Item]
+            [Expense Item]
 
-           [Droppable]
+            [Droppable]
 
-           [Draggable]```
+            [Draggable]
+            
 
 ### Dashboard  
   Connect to store - handles state
