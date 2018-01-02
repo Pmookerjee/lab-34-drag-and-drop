@@ -9,15 +9,25 @@ To test, install Dev dependencies and use `npm test`
 ## Component Tree
 
 App
+
   Provider
+
     BrowserRouter
+
       Route/Dashboard
+
         Category Form
+
         [Category Item]
+
            Category Form
+
            Expense Form
+
            [Expense Item]
+
            [Droppable]
+           
            [Draggable]
 
 ### Dashboard  
