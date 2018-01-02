@@ -8,7 +8,7 @@ To test, install Dev dependencies and use `npm test`
 
 ## Component Tree
 
-App
+```App
 
   Provider
 
@@ -27,8 +27,8 @@ App
            [Expense Item]
 
            [Droppable]
-           
-           [Draggable]
+
+           [Draggable]```
 
 ### Dashboard  
   Connect to store - handles state
