@@ -30,6 +30,7 @@ class ExpenseForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
+    this.state.cost = parseInt(this.state.cost);
     this.props.onComplete(this.state);
     this.setState(emptyState);
   }
