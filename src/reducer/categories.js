@@ -12,6 +12,9 @@ export default (state=emptyState, {type, payload}) => {
     case "EXPENSE_CREATE": 
       return state.map(category => category.id === payload.categoryID ? (category.budget -= payload.cost) && category : category);
 
+    case "EXPENSE_INSERT": 
+      return state.map(category => category.id === payload.categoryID ? (category.budget -= payload.cost) && category : category);
+    
     case "EXPENSE_UPDATE":
       return state.map(category => category.id === payload.categoryID ? (category.budget -= payload.cost) && category : category);
     
